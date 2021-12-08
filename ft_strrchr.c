@@ -6,7 +6,7 @@
 /*   By: vchan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 14:35:55 by vchan             #+#    #+#             */
-/*   Updated: 2021/12/07 15:03:55 by vchan            ###   ########.fr       */
+/*   Updated: 2021/12/08 16:26:14 by vchan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,3 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (NULL);
 }
-/*
-int	main(int argc, char **argv)
-{
-	(void)argc;
-	printf("%s----%s", ft_strrchr(argv[1], 't'), strrchr(argv[1], 't'));
-}
-*/

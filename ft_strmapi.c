@@ -6,7 +6,7 @@
 /*   By: vchan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 16:45:08 by vchan             #+#    #+#             */
-/*   Updated: 2021/12/07 16:00:23 by vchan            ###   ########.fr       */
+/*   Updated: 2021/12/08 15:43:44 by vchan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char				*str;
 	unsigned int		len;
 
-	len = ft_strlen(s);
-	if (!s && !f)
+	if (!s)
 		return (NULL);
+	len = ft_strlen(s);
 	str = malloc(sizeof(char ) * (len + 1));
 	if (!str)
 		return (NULL);

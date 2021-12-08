@@ -6,7 +6,7 @@
 /*   By: vchan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 14:10:37 by vchan             #+#    #+#             */
-/*   Updated: 2021/12/06 15:34:07 by vchan            ###   ########.fr       */
+/*   Updated: 2021/12/08 16:33:15 by vchan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	dst[i] = '\0';
 	return (ft_strlen(src));
 }
-
-/* int     main(void)
-{
-        char src[] = "abcdefghjik";
-		char dest[] = "borisborisboris";
-
-	printf("%ld",ft_strlcpy(dest, src, 0));
-	puts(dest);
-}
-*/

@@ -6,7 +6,7 @@
 /*   By: vchan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 12:34:37 by vchan             #+#    #+#             */
-/*   Updated: 2021/12/03 12:38:38 by vchan            ###   ########.fr       */
+/*   Updated: 2021/12/08 16:25:37 by vchan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,4 @@ void	ft_bzero(void *s, size_t n)
 		str[i] = '\0';
 		i++;
 	}
-}
-
-/* int main(void)
-{ 
-	char str[50] = "Banane Boris";
-	puts(str);
-
-	write (1, "\n", 1);
-  	
-	bzero(str, 10);
-	puts(str);
-}
-*/		
+}	

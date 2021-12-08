@@ -6,7 +6,7 @@
 /*   By: vchan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 12:26:51 by vchan             #+#    #+#             */
-/*   Updated: 2021/12/03 12:26:56 by vchan            ###   ########.fr       */
+/*   Updated: 2021/12/08 16:24:56 by vchan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,3 @@ int	ft_isprint(int c)
 		return (19);
 	return (0);
 }
-
-/* int main(void)
-{
-	int b = '525';
-	printf("%d----%d", isprint(b), ft_isprint(b));
-}
-*/

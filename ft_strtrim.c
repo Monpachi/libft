@@ -6,50 +6,51 @@
 /*   By: vchan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 13:32:11 by vchan             #+#    #+#             */
-/*   Updated: 2021/12/06 16:38:44 by vchan            ###   ########.fr       */
+/*   Updated: 2021/12/08 15:36:25 by vchan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_check_c(char c, char const *set)
+static size_t	ischarset(char s, char const *charset)
 {
-	size_t	i;
-	size_t	count;
+	size_t	k;
 
-	i = 0;
-	count = 0;
-	while (set[i])
+	k = 0;
+	while (charset[k])
 	{
-		if (c != set[i])
-			count++;
-		i++;
+		if (s == charset[k])
+			return (1);
+		k++;
 	}
-	if (count == ft_strlen(set))
-		return (0);
-	else
-		return (1);
+	return (0);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
+	char	*str;
 	size_t	i;
-	size_t	j;
-	size_t	s1_len;
-	char	*s1_trim;
+	size_t	k;
+	size_t	end;
 
-	s1_len = ft_strlen(s1);
-	if (ft_check_c(s1[0], set) == 0)
-		i = 0;
-	else
-		i = 1;
-	if (ft_check_c(s1[s1_len - 1], set) == 1)
-		s1_len -= 1;
-	s1_trim = malloc(sizeof(char) * (s1_len - i + 1));
-	if (!s1_trim)
+	i = 0;
+	if (!s1)
 		return (NULL);
-	j = 0;
-	while (i < s1_len)
-		s1_trim[j++] = s1[i++];
-	return (s1_trim);
+	while (s1[i] && ischarset(s1[i], set))
+		i++;
+	end = ft_strlen(s1);
+	while (end > i && ischarset(s1[end - 1], set))
+		end--;
+	str = malloc(sizeof(char) * ((end - i) + 1));
+	if (!str)
+		return (NULL);
+	k = 0;
+	while (i < end)
+	{
+		str[k] = s1[i];
+		k++;
+		i++;
+	}
+	str[k] = '\0';
+	return (str);
 }

@@ -6,7 +6,7 @@
 /*   By: vchan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 12:21:52 by vchan             #+#    #+#             */
-/*   Updated: 2021/12/03 12:22:52 by vchan            ###   ########.fr       */
+/*   Updated: 2021/12/08 16:24:46 by vchan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,3 @@ int	ft_isascii(int c)
 		return (1);
 	return (0);
 }
-
-/* int main(int argc, char **argv)
-{
-	(void)argc;
-	printf("%d----%d", isascii(argv[1][0]), ft_isascii(argv[1][0]));
-}
-*/

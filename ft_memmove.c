@@ -6,7 +6,7 @@
 /*   By: vchan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 14:33:19 by vchan             #+#    #+#             */
-/*   Updated: 2021/12/06 18:03:15 by vchan            ###   ########.fr       */
+/*   Updated: 2021/12/08 16:39:51 by vchan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,9 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		return (NULL);
 	if (reception > source)
 	{
-		while (n > 0)
+		while (n-- > 0)
 		{
-			reception[n -1] = source[n - 1];
-			n--;
+			reception[n] = source[n];
 		}
 	}
 	else

@@ -6,7 +6,7 @@
 /*   By: vchan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 14:29:49 by vchan             #+#    #+#             */
-/*   Updated: 2021/12/03 14:29:57 by vchan            ###   ########.fr       */
+/*   Updated: 2021/12/08 16:33:36 by vchan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,3 @@ int	ft_toupper(int c)
 		c -= 32;
 	return (c);
 }
-
-/* int main(void)
-{
-	//char str[] = "Borisborisboris"
-	printf("%d", ft_toupper('b'));
-}
-*/

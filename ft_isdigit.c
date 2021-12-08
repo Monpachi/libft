@@ -6,7 +6,7 @@
 /*   By: vchan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 12:19:29 by vchan             #+#    #+#             */
-/*   Updated: 2021/12/03 12:19:32 by vchan            ###   ########.fr       */
+/*   Updated: 2021/12/08 16:24:21 by vchan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,3 @@ int	ft_isdigit(int c)
 		return (1);
 	return (0);
 }
-
-/* int main(int argc, char **argv)
-{
-	(void)argc;
-	printf("%d----%d", isdigit(argv[1][0]), ft_isdigit(argv[1][0]));
-}
-*/
