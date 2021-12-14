@@ -6,7 +6,7 @@
 #    By: jgreau <jgreau@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/24 18:00:00 by jgreau            #+#    #+#              #
-#    Updated: 2021/12/10 17:13:12 by vchan            ###   ########.fr        #
+#    Updated: 2021/12/14 13:38:58 by vchan            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,9 +55,9 @@ SRCS = ft_isalpha.c \
 	ft_lstlast.c \
 	ft_lstadd_back.c \
 	ft_lstdelone.c \
-#	ft_lstclear.c \
+	ft_lstclear.c \
 	ft_lstiter.c \
-	ft_lstmap.c
+#	ft_lstmap.c
 
 #BONUS = 
 
