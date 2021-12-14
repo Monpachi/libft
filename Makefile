@@ -6,7 +6,7 @@
 #    By: jgreau <jgreau@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/24 18:00:00 by jgreau            #+#    #+#              #
-#    Updated: 2021/12/14 13:38:58 by vchan            ###   ########.fr        #
+#    Updated: 2021/12/14 15:53:31 by vchan            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,7 @@ SRCS = ft_isalpha.c \
 	ft_putstr_fd.c \
 	ft_putendl_fd.c \
 	ft_putnbr_fd.c \
-	ft_lstnew.c \
+#	ft_lstnew.c \
 	ft_lstadd_front.c \
 	ft_lstsize.c \
 	ft_lstlast.c \
@@ -57,11 +57,19 @@ SRCS = ft_isalpha.c \
 	ft_lstdelone.c \
 	ft_lstclear.c \
 	ft_lstiter.c \
-#	ft_lstmap.c
+	ft_lstmap.c
 
-#BONUS = 
+BONUS = ft_lstnew.c \
+		ft_lstadd_front.c \
+		ft_lstadd_back.c \
+		ft_lstsize.c \
+		ft_lstlast.c \
+		ft_lstdelone.c \
+		ft_lstclear.c \
+		ft_lstiter.c \
+		ft_lstmap.c
 
-#BONUS_OBJS = $(BONUS:.c=.o)
+BONUS_OBJS = $(BONUS:.c=.o)
 
 OBJS = $(SRCS:.c=.o)
 
@@ -71,19 +79,19 @@ $(NAME): $(OBJS)
 	ar rcs $@ $?
 	ranlib $@
 
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
-	gcc -nostartfiles -shared -o libft.so $(OBJS)
+#so:
+#	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
+#	gcc -nostartfiles -shared -o libft.so $(OBJS)
 
 clean:
-	$(RM) $(OBJS) #$(BONUS_OBJS)
+	$(RM) $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
 
-#bonus:	$(OBJS) $(BONUS_OBJS)
-#		ar rcs  $(NAME) $(OBJS) $(BONUS_OBJS)
+bonus:	$(OBJS) $(BONUS_OBJS)
+		ar rcs  $(NAME) $(OBJS) $(BONUS_OBJS)
 
 .PHONY: all clean fclean re

@@ -6,7 +6,7 @@
 /*   By: vchan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 11:36:55 by vchan             #+#    #+#             */
-/*   Updated: 2021/12/07 12:55:19 by vchan            ###   ########.fr       */
+/*   Updated: 2021/12/14 17:08:53 by vchan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,23 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char			*str;
 	size_t			i;
-	size_t			j;
 
-	str = (char *) s;
-	if (!s || !len)
+	if (s == NULL)
 		return (NULL);
-	str = malloc(sizeof(char ) * (len + 1));
+	str = (char *) s;
+	if (start >= ft_strlen(str))
+		return (ft_calloc(1, sizeof(char)));
+	if (start + len >= ft_strlen(str))
+		str = malloc(sizeof(char) * (ft_strlen(str + start) + 1));
+	else
+		str = malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);
 	i = 0;
-	j = 0;
-	while (s[i])
+	while (s[start] && i < len)
 	{
-		if (i >= start && j < len)
-		{
-			str[j] = s[i];
-			j++;
-		}
-		i++;
+		str[i++] = s[start++];
 	}
-	str[j] = '\0';
+	str[i] = '\0';
 	return (str);
 }	

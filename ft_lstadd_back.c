@@ -6,13 +6,13 @@
 /*   By: vchan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 14:35:00 by vchan             #+#    #+#             */
-/*   Updated: 2021/12/10 16:01:03 by vchan            ###   ########.fr       */
+/*   Updated: 2021/12/14 17:10:57 by vchan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstadd_back(t_list **alst, t_list *new)
+void	ft_lstadd_back(t_list **alst, t_list *new)
 {
 	t_list	*temp;
 

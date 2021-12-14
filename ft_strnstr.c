@@ -6,7 +6,7 @@
 /*   By: vchan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 16:49:40 by vchan             #+#    #+#             */
-/*   Updated: 2021/12/08 16:49:45 by vchan            ###   ########.fr       */
+/*   Updated: 2021/12/14 16:18:19 by vchan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	big1 = (char *) big;
 	little1 = (char *) little;
 	i = 0;
-	if (!len || big == little)
+	if (big == little || little[0] == '\0')
 		return (big1);
-	if (little1[0] == '\0')
-		return (big1);
-	while (i < len)
+	if (len == 0)
+		return (0);
+	while (big1[i] != '\0' && i < len)
 	{
 		k = 0;
 		while (i + k < len && big1[i + k] == little1[k])
