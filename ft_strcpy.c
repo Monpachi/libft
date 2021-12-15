@@ -6,7 +6,7 @@
 /*   By: vchan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 16:47:40 by vchan             #+#    #+#             */
-/*   Updated: 2021/12/08 16:47:53 by vchan            ###   ########.fr       */
+/*   Updated: 2021/12/15 12:38:28 by vchan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strcpy(char *dest, const char *src)
 {
-	char	*banane;
+	char	*str;
 
-	banane = dest;
+	str = dest;
 	while (*src != '\0')
 	{
 		*dest = *src;
@@ -24,5 +24,5 @@ char	*ft_strcpy(char *dest, const char *src)
 		src++;
 	}
 	*dest = '\0';
-	return (banane);
+	return (str);
 }

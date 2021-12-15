@@ -6,14 +6,13 @@
 /*   By: vchan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 13:22:19 by vchan             #+#    #+#             */
-/*   Updated: 2021/12/07 15:15:52 by vchan            ###   ########.fr       */
+/*   Updated: 2021/12/15 17:49:20 by vchan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int	ischarset(char c, char charset)
+static int	ischarset(char c, char charset)
 {
 	if (c == charset)
 	{
@@ -22,7 +21,7 @@ int	ischarset(char c, char charset)
 	return (0);
 }
 
-unsigned int	countword(char const *str, char charset)
+static unsigned int	countword(char const *str, char charset)
 {
 	unsigned int	i;
 	unsigned int	count;
@@ -43,7 +42,7 @@ unsigned int	countword(char const *str, char charset)
 	return (count);
 }
 
-int	lenword(char const *str, char charset)
+static int	lenword(char const *str, char charset)
 {
 	unsigned int	i;
 	unsigned int	count;
@@ -60,6 +59,17 @@ int	lenword(char const *str, char charset)
 	return (count);
 }
 
+static char	**ft_free(char **str, int i)
+{
+	while (str[i] != 0)
+	{
+		free (str[i]);
+		i--;
+	}
+	free(str);
+	return (NULL);
+}
+
 char	**ft_split(char const *s, char c)
 {	
 	unsigned int	i;
@@ -69,15 +79,15 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	result = malloc(sizeof(char *) * (countword(s, c) + 1));
-	if (result == NULL || s == NULL)
-		return (0);
+	result = ft_calloc(countword(s, c) + 1, sizeof(char *));
 	i = 0;
 	x = 0;
-	while (x < countword(s, c))
+	while (result && x < countword(s, c))
 	{
 		k = 0;
 		result[x] = malloc(sizeof(char) * (lenword(&s[i], c) + 1));
+		if (!result[x])
+			result = ft_free(result, x);
 		while (ischarset(s[i], c) && s[i])
 			i++;
 		while (!ischarset(s[i], c) && s[i])
@@ -85,32 +95,5 @@ char	**ft_split(char const *s, char c)
 		result[x][k] = '\0';
 		x++;
 	}
-	result[x] = 0;
 	return (result);
-}	
-
-/* int	main(int argc, char **argv)
-{
-	char	**strs = ft_split(argv[1], argv[2][0]);
-	int		i;
-
-	(void)argc;
-	i = 0;
-	if (strs)
-	{
-		while (strs[i])
-		{
-			if (strs[i])
-			{
-				printf("%s\n", strs[i]);
-				i++;
-			}
-			else
-				break ;
-		}
-		printf("%s", strs[i]);
-	}
-	i = 0;
-	while (strs[i])
-		free(strs[i++]);
-	free(strs);} */
+}

@@ -6,7 +6,7 @@
 #    By: jgreau <jgreau@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/24 18:00:00 by jgreau            #+#    #+#              #
-#    Updated: 2021/12/14 15:53:31 by vchan            ###   ########.fr        #
+#    Updated: 2021/12/15 14:19:48 by vchan            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,15 +49,6 @@ SRCS = ft_isalpha.c \
 	ft_putstr_fd.c \
 	ft_putendl_fd.c \
 	ft_putnbr_fd.c \
-#	ft_lstnew.c \
-	ft_lstadd_front.c \
-	ft_lstsize.c \
-	ft_lstlast.c \
-	ft_lstadd_back.c \
-	ft_lstdelone.c \
-	ft_lstclear.c \
-	ft_lstiter.c \
-	ft_lstmap.c
 
 BONUS = ft_lstnew.c \
 		ft_lstadd_front.c \
@@ -78,10 +69,6 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	ar rcs $@ $?
 	ranlib $@
-
-#so:
-#	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
-#	gcc -nostartfiles -shared -o libft.so $(OBJS)
 
 clean:
 	$(RM) $(OBJS) $(BONUS_OBJS)
